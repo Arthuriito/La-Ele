@@ -1911,76 +1911,95 @@ a:focus {
 /*******************************/
 /******* Testimonial CSS *******/
 /*******************************/
-.testimonial {
-    position: relative;
-    width: 100%;
-    padding: 45px 0;
+.testimonial-carousel::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    z-index: 1;
 }
 
-.testimonial .testimonials-carousel {
-    position: relative;
-    width: calc(100% + 30px);
-    margin: 0 -15px;
+.testimonial-carousel::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    z-index: 1;
 }
 
-.testimonial .testimonial-item {
-    position: relative;
-    width: 100%;
-    padding: 0 15px;
+@media (min-width: 768px) {
+    .testimonial-carousel::before,
+    .testimonial-carousel::after {
+        width: 200px;
+    }
+}
+
+@media (min-width: 992px) {
+    .testimonial-carousel::before,
+    .testimonial-carousel::after {
+        width: 300px;
+    }
+}
+
+.testimonial-carousel .owl-item .testimonial-text {
+    background: var(--light);
+    transform: scale(.8);
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-text {
+    background: rgb(130, 214, 5);
+    transform: scale(1);
+}
+
+.testimonial-carousel .owl-item .testimonial-text *,
+.testimonial-carousel .owl-item .testimonial-item img {
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-text * {
+    color: var(--light) !important;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-item img {
+    background: rgb(130, 214, 5) !important;
+} 
+
+.testimonial-carousel .owl-nav {
+    position: absolute;
+    width: 350px;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    justify-content: space-between;
+    opacity: 0;
+    transition: .5s;
+    z-index: 1;
 }
 
-.testimonial .testimonial-profile {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
+.testimonial-carousel:hover .owl-nav {
+    width: 300px;
+    opacity: 1;
 }
 
-.testimonial .testimonial-profile img {
-    width: 80px;
-    margin-bottom: -1px;
+.testimonial-carousel .owl-nav .owl-prev,
+.testimonial-carousel .owl-nav .owl-next {
+    position: relative;
+    color: greenyellow;
+    font-size: 45px;
+    transition: .5s;
 }
 
-.testimonial .testimonial-name {
-    padding-left: 15px;
-    width: calc(100% - 95px);
+.testimonial-carousel .owl-nav .owl-prev:hover,
+.testimonial-carousel .owl-nav .owl-next:hover {
+    color: greenyellow;
 }
 
-.testimonial .testimonial-name h3 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-
-.testimonial .testimonial-name p {
-    margin: 0;
-    font-style: italic;
-}
-
-.testimonial .testimonial-text p {
-    margin: 0;
-}
-
-.testimonial .owl-dots {
-    margin-top: 15px;
-    text-align: center;
-}
-
-.testimonial .owl-dot {
-    display: inline-block;
-    margin: 0 5px;
-    width: 12px;
-    height: 12px;
-    border-radius: 0;
-    background: greenyellow;
-}
-
-.testimonial .owl-dot.active {
-    background: #20212B;
-}
 
 
 /*******************************/
