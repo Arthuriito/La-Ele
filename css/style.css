@@ -1907,7 +1907,90 @@ a:focus {
     height: 160px;
 }
 
+/*Vitor*/
 
+.vitor {
+    position: relative;
+    width: 100%;
+    padding: 45px 0 15px 0;
+}
+
+.vitor .team-item {
+    position: relative;
+    margin-bottom: 35px;
+    right: 90px;
+
+}
+
+.vitor.team-img {
+    width: 100%;
+    height: 260px;
+    position: relative;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.vitor .team-img img {
+    width: 100%;
+    transform: scale(1.1);
+    margin-bottom: -15px;
+    transition: .3s;
+    object-fit: cover;
+}
+
+.vitor .team-item:hover img {
+    margin: -15px 0 0 0;
+}
+
+.vitor .team-text {
+    position: absolute;
+    width: calc(100% - 40px);
+    height: 96px;
+    bottom: 0;
+    left: 20px;
+    padding: 22px 0;
+    text-align: center;
+    background: #ffffff;
+    transition: .3s;
+    overflow: hidden;
+}
+
+.vitor .team-text h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.vitor .team-text p {
+    margin-bottom: 20px;
+}
+
+.vitor .team-social {
+    position: relative;
+    font-size: 0;
+}
+
+.vitor .team-social a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    margin: 0 3px;
+    padding: 5px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #4a4c70;
+    border: 2px solid greenyellow;
+    transition: .3s;
+}
+
+.vitor .team-social a:hover {
+    color: #20212B;
+    background: greenyellow;
+}
+
+.vitor .team-item:hover .team-text {
+    height: 160px;
+}
 /*******************************/
 /******* Testimonial CSS *******/
 /*******************************/
